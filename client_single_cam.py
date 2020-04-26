@@ -36,9 +36,10 @@ name    = args["name"]
 calibrate = "OK"
 
 if source != "None":
-    vs = VideoStream(int(source)).start()
-else:
-    vs = None
+    if source == "pi":
+        vs = VideoStream(usePiCamera=True).start()
+    else:
+        vs = VideoStream(int(source)).start()
 time.sleep(2.0)
 
 while True:
