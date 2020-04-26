@@ -1,0 +1,5 @@
+opencv-python==4.2.0.32
+imagezmq==1.0.1
+imutils==0.5.3
+numpy==1.18.1
+pytz
