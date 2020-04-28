@@ -60,7 +60,7 @@ while True:
         frame1 = vs.read()
     else:
         frame1 = np.ones((480,640,3), np.uint8) * random.randint(1,255)
-    frame1 = cv2.resize(frame1,(args["width"], args["height"]))
+    # frame1 = cv2.resize(frame1,(args["width"], args["height"]))
 
     if opsi_active == "hsv":
         frame1 = cv2.cvtColor(frame1, cv2.COLOR_BGR2HSV)
@@ -72,5 +72,6 @@ while True:
     
     if frame1 is not None:
         respon = (sender.send_image_reqrep(data1, frame1))
-        print(respon)
+        opsi_active = respon.decode("utf-8").split("|")[1].split("#")[1]
+        
 vs.stop()
