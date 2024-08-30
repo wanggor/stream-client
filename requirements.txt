@@ -1,4 +1,4 @@
-opencv-python==4.2.0.32
+opencv-python==4.8.1.78
 imagezmq==1.0.1
 imutils==0.5.3
 numpy==1.18.1
